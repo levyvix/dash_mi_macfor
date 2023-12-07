@@ -25,7 +25,7 @@ bi_mate_clean <- bi_mate %>%
     nome = NA,
     data_finalizado = NA,
     percepcao = NA,
-    mes = carimbo_de_data_hora %>% month(label = FALSE),
+    mes = month(carimbo_de_data_hora, label = FALSE),
   ) %>%
   dplyr::rename(
     data_solicitado = carimbo_de_data_hora,
@@ -55,7 +55,7 @@ bi_mate_velho <- read_sheet(
 ) %>%
   mutate(
     data_solicitado = date(data_solicitado),
-    mes = data_solicitado %>% month(label = FALSE)
+    mes = month(data_solicitado, label = FALSE)
   )
 
 
