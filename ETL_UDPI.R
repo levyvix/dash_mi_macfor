@@ -21,7 +21,7 @@ udpi_clean <- udpi %>%
   mutate(
     solicitante = str_to_title(solicitante),
     trimestre = quarter(carimbo_de_data_hora) %>% str_c("T", .),
-    mes = month(carimbo_de_data_hora, label = F),
+    mes = month(carimbo_de_data_hora, label = FALSE),
   )
 
 udpi_clean %>%
